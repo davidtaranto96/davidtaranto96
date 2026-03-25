@@ -41,17 +41,17 @@
 | Project | Description | Tech |
 |---------|-------------|------|
 | :shield: [**M365 Offboarding Module**](https://github.com/davidtaranto96/Offboarding-module) | Automated employee offboarding tool — backup OneDrive & Emails to Azure Blob, remove licenses, groups, block sign-in. Full SPA with MSAL auth. | `Azure` `Graph API` `MSAL.js` `Blob Storage` |
+| 🤖 [**Claude: de 0 a Agentes**](https://davidtaranto96.github.io/Blog-AI) | Guía interactiva completa del ecosistema Claude — fundamentos, diseño web, marketing, agentes y automatización. Con buscador, favoritos y 50+ comandos listos para copiar. | `Claude` `HTML` `GitHub Pages` |
 
 </div>
 
 ## Career Path
-
 ```
-2025 - Present   Windows System Administrator    @ JBKnowledge (Global)
-2023 - 2025      IT Systems Analyst              @ Ganfeng Lithium (Mining)
-2022 - 2023      IT Support Specialist           @ Livent (Chemical/Mining)
-2021 - 2025      Intern Developer                @ Silentium Apps
-2020             IT Technician                   @ Litecode SAS
+2025 - Present  Windows System Administrator @ JBKnowledge (Global)
+2023 - 2025     IT Systems Analyst @ Ganfeng Lithium (Mining)
+2022 - 2023     IT Support Specialist @ Livent (Chemical/Mining)
+2021 - 2025     Intern Developer @ Silentium Apps
+2020            IT Technician @ Litecode SAS
 ```
 
 ## GitHub Stats
@@ -71,15 +71,5 @@
 ![Profile Views](https://komarev.com/ghpvc/?username=davidtaranto96&color=58A6FF&style=flat-square&label=Profile+Views)
 
 *"Automate the boring stuff, focus on what matters."*
-
-</div>
-
-<div align="center">---
-
-## 🤖 Guía Claude: de 0 a Agentes
-
-[![Ver guía](https://img.shields.io/badge/Ver%20gu%C3%ADa%20interactiva-%23c8f060?style=for-the-badge&logo=github)](https://davidtaranto96.github.io/Blog-AI)
-
-Guía interactiva completa — fundamentos, diseño web, marketing, agentes y productividad con Claude.
 
 </div>
