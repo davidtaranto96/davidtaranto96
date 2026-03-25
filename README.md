@@ -72,9 +72,9 @@
 
 *"Automate the boring stuff, focus on what matters."*
 
-</div>
----
 
+---
+</div>
 ## 🤖 Guía Claude: de 0 a Agentes
 
 [![Ver guía](https://img.shields.io/badge/Ver%20gu%C3%ADa%20interactiva-%23c8f060?style=for-the-badge&logo=github)](https://davidtaranto96.github.io/Blog-AI)
