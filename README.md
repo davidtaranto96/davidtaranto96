@@ -74,8 +74,6 @@
 
 </div>
 
----
-
 <div align="center">---
 
 ## 🤖 Guía Claude: de 0 a Agentes
