@@ -55,7 +55,13 @@
 ```
 
 ## GitHub Stats
+---
 
+## 🤖 Guía Claude: de 0 a Agentes
+
+[![Ver guía](https://img.shields.io/badge/Ver%20gu%C3%ADa%20interactiva-%23c8f060?style=for-the-badge&logo=github)](https://davidtaranto96.github.io/Blog-AI)
+
+Guía interactiva completa — fundamentos, diseño web, marketing, agentes y productividad con Claude.
 <div align="center">
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=davidtaranto96&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9)
