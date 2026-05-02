@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>David Taranto · Windows SysAdmin · Cloud & Automation</title>
+<meta name="description" content="IT professional with 5+ years in Windows System Administration, Microsoft 365, Azure y automation. Salta, Argentina." />
+<meta property="og:title" content="David Taranto — Cloud & Automation" />
+<meta property="og:description" content="Windows System Administrator at JBKnowledge. M365, Azure, PowerShell, Graph API." />
+<meta property="og:image" content="./assets/instagram/david.taranto/profile.jpg" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#0D1117" />
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230D1117'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%2358A6FF' font-family='Arial' font-weight='700'>D</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0D1117;
+  --bg-elev:#0F1623;
+  --surface:#161B22;
+  --surface-2:#1C2230;
+  --border:#21262D;
+  --border-soft:#2D333B;
+  --text:#C9D1D9;
+  --text-dim:#8B949E;
+  --text-muted:#6E7681;
+  --accent:#58A6FF;
+  --accent-2:#7EE7FC;
+  --green:#3FB950;
+  --orange:#F0883E;
+  --purple:#BC8CFF;
+  --pink:#FF7B72;
+  --grid-line:rgba(88,166,255,.08);
+  --radius-md:14px;
+  --radius-sm:8px;
+  --radius-lg:22px;
+  --shadow-soft:0 1px 0 rgba(255,255,255,.04) inset, 0 0 0 1px rgba(88,166,255,.06);
+  --shadow-card:0 1px 0 rgba(255,255,255,.04) inset, 0 18px 60px -30px rgba(0,0,0,.7), 0 0 0 1px var(--border);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-feature-settings:'cv11','ss01','ss03';
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+::selection{background:var(--accent);color:#0D1117}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent-2)}
+
+/* Background grid + glow */
+.bg-fx{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.bg-fx::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 1100px 700px at 50% 0%,#000 30%,transparent 70%);
+  opacity:.6;
+}
+.bg-fx::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(700px 380px at 18% -10%,rgba(88,166,255,.18),transparent 60%),
+    radial-gradient(620px 420px at 85% 8%,rgba(126,231,252,.10),transparent 60%),
+    radial-gradient(900px 600px at 50% 110%,rgba(188,140,255,.08),transparent 60%);
+}
+
+/* Layout */
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 24px}
+section{position:relative;padding:96px 0;scroll-margin-top:80px}
+section + section{border-top:1px solid var(--border)}
+
+/* Nav */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  background:rgba(13,17,23,.6);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s, background .25s;
+}
+.nav.scrolled{border-color:var(--border);background:rgba(13,17,23,.82)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:.02em;color:var(--text)}
+.brand-mark{
+  width:30px;height:30px;border-radius:8px;
+  background:linear-gradient(135deg,#58A6FF 0%,#BC8CFF 100%);
+  display:grid;place-items:center;color:#0D1117;font-weight:800;font-size:14px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 6px 20px -8px rgba(88,166,255,.6);
+}
+.nav-links{display:flex;align-items:center;gap:8px}
+.nav-link{
+  color:var(--text-dim);font-size:13.5px;padding:8px 12px;border-radius:8px;
+  font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.02em;
+  transition:color .2s,background .2s;
+}
+.nav-link:hover{color:var(--text);background:var(--surface-2)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 14px;border-radius:8px;
+  background:var(--accent);color:#0D1117;
+  font-weight:600;font-size:13.5px;
+  transition:transform .15s,box-shadow .2s;
+  box-shadow:0 6px 20px -8px rgba(88,166,255,.5);
+}
+.nav-cta:hover{color:#0D1117;transform:translateY(-1px);box-shadow:0 10px 28px -10px rgba(88,166,255,.7)}
+.nav-toggle{display:none;background:none;border:0;color:var(--text);cursor:pointer;padding:8px}
+
+/* Hero */
+.hero{padding-top:140px;padding-bottom:80px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:64px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);
+  padding:6px 12px;border:1px solid rgba(88,166,255,.25);border-radius:999px;
+  background:rgba(88,166,255,.05);
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{
+  font-family:'Space Grotesk','Inter',sans-serif;
+  font-size:clamp(2.4rem,6vw,4.6rem);
+  line-height:1.02;letter-spacing:-.035em;font-weight:700;
+  margin:24px 0 20px;color:#F0F6FC;
+}
+.hero h1 .grad{
+  background:linear-gradient(135deg,#58A6FF 0%,#7EE7FC 50%,#BC8CFF 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-tag{
+  font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--text-dim);
+  margin-bottom:24px;letter-spacing:-.01em;
+}
+.hero-tag .sep{color:var(--border-soft);margin:0 8px}
+.hero-bio{font-size:17px;color:var(--text-dim);max-width:560px;margin-bottom:32px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 18px;border-radius:10px;
+  font-weight:600;font-size:14px;
+  font-family:'Inter',sans-serif;letter-spacing:-.01em;
+  transition:transform .15s,box-shadow .2s,background .2s,border-color .2s;
+  border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--accent);color:#0D1117;box-shadow:0 8px 24px -10px rgba(88,166,255,.5)}
+.btn-primary:hover{color:#0D1117;transform:translateY(-1px);box-shadow:0 12px 32px -10px rgba(88,166,255,.7)}
+.btn-ghost{background:var(--surface);border-color:var(--border);color:var(--text)}
+.btn-ghost:hover{background:var(--surface-2);border-color:var(--border-soft)}
+.btn svg{width:16px;height:16px}
+
+/* Hero quick stats */
+.quick-stats{display:flex;gap:28px;flex-wrap:wrap}
+.qs{display:flex;flex-direction:column}
+.qs .v{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#F0F6FC;letter-spacing:-.02em}
+.qs .l{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.12em;margin-top:4px}
+
+/* Hero card (right) */
+.card-stack{position:relative}
+.terminal{
+  background:var(--bg-elev);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-card);
+  overflow:hidden;
+}
+.term-bar{
+  display:flex;align-items:center;gap:8px;
+  padding:12px 14px;border-bottom:1px solid var(--border);
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);
+}
+.term-bar .dots{display:flex;gap:6px}
+.term-bar .dots span{width:11px;height:11px;border-radius:50%;background:#3D434C}
+.term-bar .dots span:nth-child(1){background:#FF5F56}
+.term-bar .dots span:nth-child(2){background:#FFBD2E}
+.term-bar .dots span:nth-child(3){background:#27C93F}
+.term-bar .title{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted);margin-left:6px}
+.term-body{padding:18px 18px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.7;color:var(--text)}
+.term-body .prompt{color:var(--green)}
+.term-body .cmd{color:#F0F6FC}
+.term-body .out{color:var(--text-dim)}
+.term-body .key{color:var(--accent)}
+.term-body .str{color:var(--accent-2)}
+.term-body .com{color:var(--text-muted);font-style:italic}
+.term-body .cursor{display:inline-block;width:8px;height:14px;background:var(--accent);vertical-align:middle;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* Profile mini-badge floating */
+.ig-mini{
+  position:absolute;right:-22px;bottom:-22px;
+  display:flex;align-items:center;gap:12px;
+  padding:12px 14px 12px 12px;
+  background:var(--surface);
+  border:1px solid var(--border-soft);
+  border-radius:14px;
+  box-shadow:0 18px 50px -16px rgba(0,0,0,.7);
+  backdrop-filter:blur(6px);
+}
+.ig-mini img{width:42px;height:42px;border-radius:50%;border:2px solid var(--accent)}
+.ig-mini .ttl{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text);font-weight:600}
+.ig-mini .sub{font-size:11px;color:var(--text-muted);margin-top:2px}
+
+/* Section title */
+.s-head{margin-bottom:48px}
+.s-eye{
+  font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);
+  letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:10px;
+}
+.s-eye::before{content:"";width:36px;height:1px;background:var(--accent)}
+.s-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.025em;
+  color:#F0F6FC;margin:14px 0 12px;line-height:1.1;
+}
+.s-sub{font-size:17px;color:var(--text-dim);max-width:680px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:start}
+.about-bullets{display:grid;gap:16px;margin-top:18px}
+.ab{display:flex;gap:14px;padding:18px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface);transition:border-color .2s,transform .2s}
+.ab:hover{border-color:var(--accent);transform:translateY(-2px)}
+.ab-icon{
+  width:42px;height:42px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(88,166,255,.2),rgba(126,231,252,.1));
+  border:1px solid rgba(88,166,255,.25);
+  display:grid;place-items:center;color:var(--accent);
+}
+.ab-icon svg{width:20px;height:20px}
+.ab-text strong{display:block;color:#F0F6FC;font-size:14.5px;margin-bottom:3px}
+.ab-text span{color:var(--text-dim);font-size:14px;line-height:1.55}
+.ab-text code{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);background:rgba(88,166,255,.08);padding:1px 6px;border-radius:4px}
+
+.about-side{
+  position:sticky;top:100px;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:28px;
+}
+.about-side h3{
+  font-family:'JetBrains Mono',monospace;font-size:12px;
+  color:var(--text-muted);letter-spacing:.16em;text-transform:uppercase;
+  margin:0 0 18px;
+}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14px}
+.kv dt{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted);padding-top:2px}
+.kv dd{margin:0;color:var(--text)}
+.kv dd a{color:var(--accent)}
+.about-side hr{border:0;border-top:1px solid var(--border);margin:22px 0}
+
+/* Stack */
+.stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stack-cat{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:22px;
+  transition:border-color .25s,transform .25s;
+}
+.stack-cat:hover{border-color:var(--accent);transform:translateY(-3px)}
+.stack-cat h4{
+  font-family:'JetBrains Mono',monospace;font-size:11.5px;
+  color:var(--text-muted);text-transform:uppercase;letter-spacing:.14em;
+  margin:0 0 14px;
+}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 10px;border-radius:6px;
+  font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;
+  border:1px solid var(--border-soft);background:var(--surface-2);
+  color:var(--text);
+  transition:transform .15s,border-color .2s,color .2s;
+}
+.badge:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.badge .dot{width:7px;height:7px;border-radius:50%}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.proj{
+  position:relative;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:28px;
+  display:flex;flex-direction:column;gap:18px;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+  overflow:hidden;
+}
+.proj::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--purple));
+  opacity:0;transition:opacity .25s;
+}
+.proj:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 30px 70px -30px rgba(88,166,255,.25)}
+.proj:hover::before{opacity:1}
+.proj-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.proj-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(88,166,255,.18),rgba(188,140,255,.12));
+  border:1px solid rgba(88,166,255,.2);
+  display:grid;place-items:center;font-size:22px;
+}
+.proj-link{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:6px 11px;border-radius:8px;
+  background:var(--surface-2);border:1px solid var(--border-soft);
+  font-family:'JetBrains Mono',monospace;font-size:11.5px;
+  color:var(--text-dim);transition:all .2s;
+}
+.proj-link:hover{color:var(--accent);border-color:var(--accent)}
+.proj-link svg{width:13px;height:13px}
+.proj h3{
+  font-family:'Space Grotesk',sans-serif;font-size:22px;
+  font-weight:600;letter-spacing:-.015em;color:#F0F6FC;margin:0;
+}
+.proj p{color:var(--text-dim);font-size:15px;margin:0;line-height:1.6}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+
+/* Career timeline */
+.timeline{position:relative;max-width:780px;margin:0 auto;padding:8px 0 8px 4px}
+.timeline::before{
+  content:"";position:absolute;left:14px;top:14px;bottom:14px;
+  width:2px;background:linear-gradient(180deg,var(--accent),var(--purple),transparent);
+  opacity:.5;
+}
+.t-item{position:relative;padding-left:50px;padding-bottom:32px}
+.t-item:last-child{padding-bottom:0}
+.t-dot{
+  position:absolute;left:6px;top:6px;
+  width:18px;height:18px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--accent);
+  box-shadow:0 0 0 4px rgba(88,166,255,.12);
+}
+.t-item.current .t-dot{background:var(--accent);box-shadow:0 0 0 4px rgba(88,166,255,.2),0 0 18px rgba(88,166,255,.6)}
+.t-period{
+  font-family:'JetBrains Mono',monospace;font-size:12px;
+  color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;
+}
+.t-role{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;color:#F0F6FC;margin:5px 0 4px;letter-spacing:-.01em}
+.t-company{color:var(--accent);font-size:14.5px;margin-bottom:6px}
+.t-desc{color:var(--text-dim);font-size:14px;line-height:1.55}
+
+/* Contact */
+.contact{padding:104px 0 96px}
+.contact-card{
+  background:linear-gradient(135deg,rgba(88,166,255,.08) 0%,rgba(188,140,255,.05) 100%);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:64px 56px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.contact-card::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(600px 300px at 50% 0%,rgba(88,166,255,.18),transparent 60%);
+  pointer-events:none;
+}
+.contact-card h2{
+  font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;letter-spacing:-.025em;color:#F0F6FC;margin:0 0 14px;
+}
+.contact-card p{color:var(--text-dim);font-size:17px;max-width:520px;margin:0 auto 32px}
+.contact-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.contact-socials{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text-muted)}
+.contact-socials a{color:var(--text-dim);display:inline-flex;align-items:center;gap:6px;transition:color .2s}
+.contact-socials a:hover{color:var(--accent)}
+
+/* Footer */
+footer{padding:36px 0 56px;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text-muted);text-align:center}
+footer .quote{font-family:'Space Grotesk',sans-serif;font-style:italic;color:var(--text-dim);margin-bottom:12px;font-size:14px}
+
+/* Reveal animations */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* Mobile */
+@media (max-width:920px){
+  .hero{padding-top:120px}
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .ig-mini{position:static;margin-top:16px;display:inline-flex}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .about-side{position:static}
+  .stack-grid{grid-template-columns:repeat(2,1fr)}
+  .projects-grid{grid-template-columns:1fr}
+  .nav-links .nav-link{display:none}
+  .nav-cta{padding:6px 11px;font-size:12.5px}
+}
+@media (max-width:560px){
+  section{padding:72px 0}
+  .container{padding:0 18px}
+  .stack-grid{grid-template-columns:1fr}
+  .contact-card{padding:48px 24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">DT</span>
+      <span>david.taranto</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">~/about</a>
+      <a href="#stack" class="nav-link">~/stack</a>
+      <a href="#projects" class="nav-link">~/projects</a>
+      <a href="#career" class="nav-link">~/career</a>
+      <a href="#contact" class="nav-cta">Contacto →</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="eyebrow"><span class="dot"></span> Disponible · Salta, Argentina</div>
+        <h1>Automatizo lo aburrido<br/>y libero <span class="grad">tiempo crítico</span> de IT.</h1>
+        <p class="hero-tag">Windows SysAdmin <span class="sep">·</span> Cloud &amp; M365 <span class="sep">·</span> Automation</p>
+        <p class="hero-bio">5+ años administrando entornos Windows, Microsoft 365 y Azure para empresas multinacionales. Construyo herramientas internas que eliminan tareas repetitivas — desde offboardings automatizados hasta dashboards de Intune.</p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="mailto:david_taranto@outlook.es">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+            Contactame
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/davidtaranto/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/davidtaranto96" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.17a10.96 10.96 0 0 1 5.75 0c2.2-1.48 3.16-1.17 3.16-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.26 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+            GitHub
+          </a>
+        </div>
+
+        <div class="quick-stats">
+          <div class="qs"><span class="v">5+</span><span class="l">años en IT</span></div>
+          <div class="qs"><span class="v">B2+</span><span class="l">inglés diario</span></div>
+          <div class="qs"><span class="v">Global</span><span class="l">team @ JBKnowledge</span></div>
+          <div class="qs"><span class="v">UCASAL</span><span class="l">Ing. Informática</span></div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card-stack">
+          <div class="terminal" role="presentation">
+            <div class="term-bar">
+              <div class="dots"><span></span><span></span><span></span></div>
+              <span class="title">~/whoami.ps1</span>
+            </div>
+            <div class="term-body">
+              <div><span class="prompt">PS</span> <span class="cmd">Get-User -Name "david.taranto"</span></div>
+              <div class="out">&nbsp;</div>
+              <div><span class="key">Name</span><span class="out">         : </span><span class="str">"David Taranto"</span></div>
+              <div><span class="key">Role</span><span class="out">         : </span><span class="str">"Windows SysAdmin"</span></div>
+              <div><span class="key">Company</span><span class="out">      : </span><span class="str">"JBKnowledge"</span></div>
+              <div><span class="key">Location</span><span class="out">     : </span><span class="str">"Salta, AR"</span></div>
+              <div><span class="key">Stack</span><span class="out">        : </span><span class="str">@("M365","Azure","PowerShell")</span></div>
+              <div><span class="key">Specialty</span><span class="out">    : </span><span class="str">"Automation"</span></div>
+              <div><span class="key">Status</span><span class="out">       : </span><span class="str">"Open to collab"</span></div>
+              <div class="out">&nbsp;</div>
+              <div><span class="com"># Currently shipping internal tools</span></div>
+              <div><span class="com"># Stay caffeinated. Automate everything.</span></div>
+              <div><span class="prompt">PS</span> <span class="cursor"></span></div>
+            </div>
+          </div>
+          <div class="ig-mini" aria-label="Instagram personal">
+            <img src="./assets/instagram/david.taranto/profile.jpg" alt="David Taranto" />
+            <div>
+              <div class="ttl">⚡ @david.taranto</div>
+              <div class="sub">Good Vibes Only · 3.4K followers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <div class="container">
+    <div class="s-head">
+      <div class="s-eye">01 // sobre mí</div>
+      <h2 class="s-title">IT pro, builder &amp; estudiante perpetuo.</h2>
+      <p class="s-sub">Vengo del soporte técnico, pasé por minería y química, hoy administro entornos Windows globales. Lo que más me gusta: encontrar la tarea que se repite y matarla con un script.</p>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <div class="about-bullets">
+          <div class="ab">
+            <div class="ab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M12 8v8"/></svg></div>
+            <div class="ab-text"><strong>Windows System Administrator @ JBKnowledge</strong><span>Trabajo con equipos globales — administración de identidad en Azure AD, despliegues con Intune, automatizaciones con <code>PowerShell</code> y <code>Graph API</code>.</span></div>
+          </div>
+          <div class="ab">
+            <div class="ab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 10-10 5L2 10l10-5 10 5z"/><path d="m2 10 10 5 10-5"/><path d="m2 14 10 5 10-5"/></svg></div>
+            <div class="ab-text"><strong>Estudiante de Ingeniería Informática</strong><span>Universidad Católica de Salta (UCASAL). Lo que estudio se vuelve lo que automatizo en el trabajo, y al revés.</span></div>
+          </div>
+          <div class="ab">
+            <div class="ab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+            <div class="ab-text"><strong>Inglés B2+ con equipos globales</strong><span>Stand-ups, documentación técnica y troubleshooting cross-time-zone como rutina diaria.</span></div>
+          </div>
+          <div class="ab">
+            <div class="ab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div class="ab-text"><strong>Builder de tools internas</strong><span>Cuando una tarea se hace 3 veces, ya es candidata a script. Cuando son 10, ya es candidata a app interna con auth y blob storage.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="about-side">
+        <h3>Stats &amp; Context</h3>
+        <dl class="kv">
+          <dt>email</dt><dd><a href="mailto:david_taranto@outlook.es">david_taranto@outlook.es</a></dd>
+          <dt>linkedin</dt><dd><a href="https://www.linkedin.com/in/davidtaranto/" target="_blank" rel="noopener">/in/davidtaranto</a></dd>
+          <dt>github</dt><dd><a href="https://github.com/davidtaranto96" target="_blank" rel="noopener">/davidtaranto96</a></dd>
+          <dt>instagram</dt><dd><a href="https://instagram.com/david.taranto" target="_blank" rel="noopener">@david.taranto</a> <span style="color:var(--text-muted)">· privado</span></dd>
+        </dl>
+        <hr/>
+        <h3>Currently Working On</h3>
+        <dl class="kv">
+          <dt>day-job</dt><dd>JBKnowledge — IT global ops</dd>
+          <dt>side</dt><dd>BAZA Atelier (rediseño + Tienda Nube)</dd>
+          <dt>learning</dt><dd>Microsoft Graph SDK · TypeScript</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack" class="reveal">
+  <div class="container">
+    <div class="s-head">
+      <div class="s-eye">02 // tech stack</div>
+      <h2 class="s-title">Las herramientas que uso en producción.</h2>
+      <p class="s-sub">Stack real de día a día. Sin badges-decorativos, todo lo que aparece acá es algo en lo que entrego trabajo.</p>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-cat">
+        <h4>Endpoint &amp; Cloud</h4>
+        <div class="badges">
+          <span class="badge"><span class="dot" style="background:#D83B01"></span>Microsoft 365</span>
+          <span class="badge"><span class="dot" style="background:#0078D4"></span>Azure AD</span>
+          <span class="badge"><span class="dot" style="background:#0089D6"></span>Azure</span>
+          <span class="badge"><span class="dot" style="background:#0078D4"></span>Exchange</span>
+          <span class="badge"><span class="dot" style="background:#0078D4"></span>Intune</span>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <h4>Infrastructure</h4>
+        <div class="badges">
+          <span class="badge"><span class="dot" style="background:#0078D4"></span>Windows Server</span>
+          <span class="badge"><span class="dot" style="background:#003366"></span>Active Directory</span>
+          <span class="badge"><span class="dot" style="background:#607078"></span>VMware</span>
+          <span class="badge"><span class="dot" style="background:#4CAF50"></span>DNS / DHCP</span>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <h4>Automation</h4>
+        <div class="badges">
+          <span class="badge"><span class="dot" style="background:#5391FE"></span>PowerShell</span>
+          <span class="badge"><span class="dot" style="background:#F7DF1E"></span>JavaScript</span>
+          <span class="badge"><span class="dot" style="background:#6264A7"></span>Graph API</span>
+          <span class="badge"><span class="dot" style="background:#E34F26"></span>HTML / CSS</span>
+          <span class="badge"><span class="dot" style="background:#7EE7FC"></span>Claude SDK</span>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <h4>Security &amp; Ops</h4>
+        <div class="badges">
+          <span class="badge"><span class="dot" style="background:#742774"></span>Purview DLP</span>
+          <span class="badge"><span class="dot" style="background:#FF6F00"></span>Patch Management</span>
+          <span class="badge"><span class="dot" style="background:#62D84E"></span>ServiceNow</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+  <div class="container">
+    <div class="s-head">
+      <div class="s-eye">03 // featured projects</div>
+      <h2 class="s-title">Lo que estoy construyendo.</h2>
+      <p class="s-sub">Proyectos reales — algunos de trabajo, otros side-projects. Todos open source o accesibles públicamente.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="proj">
+        <div class="proj-head">
+          <div class="proj-icon">🛡</div>
+          <a class="proj-link" href="https://github.com/davidtaranto96/Offboarding-module" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7"/><path d="M21 3 10 14"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            github
+          </a>
+        </div>
+        <h3>M365 Offboarding Module</h3>
+        <p>Tool automatizada para offboarding de empleados — backup de OneDrive y emails a Azure Blob, remoción de licencias y grupos, bloqueo de sign-in. SPA full con MSAL auth.</p>
+        <div class="proj-tags">
+          <span class="badge">Azure</span>
+          <span class="badge">Graph API</span>
+          <span class="badge">MSAL.js</span>
+          <span class="badge">Blob Storage</span>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-head">
+          <div class="proj-icon">🤖</div>
+          <a class="proj-link" href="https://davidtaranto96.github.io/Blog-AI" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7"/><path d="M21 3 10 14"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            live demo
+          </a>
+        </div>
+        <h3>Claude: de 0 a Agentes</h3>
+        <p>Guía interactiva del ecosistema Claude — fundamentos, diseño web, marketing, agentes y automatización. Buscador, favoritos y 50+ comandos listos para copiar.</p>
+        <div class="proj-tags">
+          <span class="badge">Claude</span>
+          <span class="badge">HTML</span>
+          <span class="badge">GitHub Pages</span>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-head">
+          <div class="proj-icon">🪡</div>
+          <a class="proj-link" href="https://baza.com.ar" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7"/><path d="M21 3 10 14"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            baza.com.ar
+          </a>
+        </div>
+        <h3>BAZA Atelier — Rediseño + migración</h3>
+        <p>Identidad de marca completa, rediseño web y migración a Tienda Nube para atelier de moda en Salta. Manual de marca, auditoría, mockup interactivo y kit CSS para el editor.</p>
+        <div class="proj-tags">
+          <span class="badge">Branding</span>
+          <span class="badge">HTML / CSS</span>
+          <span class="badge">Tienda Nube</span>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-head">
+          <div class="proj-icon">📊</div>
+          <a class="proj-link" href="https://github.com/davidtaranto96?tab=repositories" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7"/><path d="M21 3 10 14"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            ver más
+          </a>
+        </div>
+        <h3>Intune Dashboard &amp; otros internos</h3>
+        <p>Repos de tools internas — dashboards de Intune, módulos de eDiscovery search, time tracking. Resuelven problemas reales y son la base para los siguientes.</p>
+        <div class="proj-tags">
+          <span class="badge">Intune</span>
+          <span class="badge">PowerShell</span>
+          <span class="badge">Microsoft 365</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career" class="reveal">
+  <div class="container">
+    <div class="s-head">
+      <div class="s-eye">04 // career path</div>
+      <h2 class="s-title">El camino, en orden.</h2>
+      <p class="s-sub">De técnico de soporte a SysAdmin global. Cada parada me dejó algo: minería me enseñó disciplina operativa; químicos, compliance; multinacional, escala.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="t-item current">
+        <div class="t-dot"></div>
+        <div class="t-period">2025 — Presente</div>
+        <h4 class="t-role">Windows System Administrator</h4>
+        <div class="t-company">JBKnowledge · Global</div>
+        <p class="t-desc">Administración de identidad y endpoints en entorno multinacional. Inglés diario, automatización con PowerShell y Graph API.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-period">2023 — 2025</div>
+        <h4 class="t-role">IT Systems Analyst</h4>
+        <div class="t-company">Ganfeng Lithium · Mining</div>
+        <p class="t-desc">Soporte y administración de sistemas en industria minera. Operativa en sitios remotos, alta disciplina de uptime.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-period">2022 — 2023</div>
+        <h4 class="t-role">IT Support Specialist</h4>
+        <div class="t-company">Livent · Chemical / Mining</div>
+        <p class="t-desc">Especialista en soporte para usuarios de planta. Compliance y procedimientos críticos de seguridad.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-period">2021 — 2025</div>
+        <h4 class="t-role">Intern Developer</h4>
+        <div class="t-company">Silentium Apps</div>
+        <p class="t-desc">Desarrollo de aplicaciones internas y herramientas — la escuela donde aprendí a construir tools que la gente realmente usa.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-period">2020</div>
+        <h4 class="t-role">IT Technician</h4>
+        <div class="t-company">Litecode SAS</div>
+        <p class="t-desc">Primer paso. Hardware, soporte, fundamentos. Toda automatización empieza por entender la tarea manual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact reveal">
+  <div class="container">
+    <div class="contact-card">
+      <div class="s-eye" style="justify-content:center">05 // let's talk</div>
+      <h2>¿Tenés algo aburrido y repetitivo que automatizar?</h2>
+      <p>Si necesitás ayuda con M365, Azure, automatizaciones de IT o querés hablar de un proyecto, escribime. Respondo en horas, no en días.</p>
+      <div class="contact-cta">
+        <a class="btn btn-primary" href="mailto:david_taranto@outlook.es">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          david_taranto@outlook.es
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/davidtaranto/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          Conectar
+        </a>
+      </div>
+      <div class="contact-socials">
+        <a href="https://github.com/davidtaranto96" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.17a10.96 10.96 0 0 1 5.75 0c2.2-1.48 3.16-1.17 3.16-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.26 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+          /davidtaranto96
+        </a>
+        <span style="color:var(--border-soft)">·</span>
+        <a href="https://instagram.com/david.taranto" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          @david.taranto
+        </a>
+        <span style="color:var(--border-soft)">·</span>
+        <span>📍 Salta, Argentina</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="quote">"Automate the boring stuff, focus on what matters."</div>
+    <div>© 2026 David Taranto · built with vanilla HTML/CSS/JS · hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+<script>
+// Nav blur on scroll
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
