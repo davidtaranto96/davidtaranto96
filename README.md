@@ -2,7 +2,7 @@
 
 # David Taranto
 
-**Windows System Administrator | IT Analyst | Cloud & Automation**
+**Identity & Access Engineer | Entra ID & Conditional Access | Cloud & Automation**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/davidtaranto/)
 [![Email](https://img.shields.io/badge/Email-0078D4?style=for-the-badge&logo=maildotru&logoColor=white)](mailto:contacto@dtsystem.com.ar)
@@ -17,7 +17,7 @@
 
 ## About Me
 
-- :office: Currently **Windows System Administrator** at **JBKnowledge**
+- :office: Currently **Identity & Access Engineer** at **DXC Technology**
 - :briefcase: Freelance as **DT System**: websites, online stores and custom management systems for businesses, at [dtsystem.com.ar](https://dtsystem.com.ar)
 - :mortar_board: Informatics Engineering student at Catholic University of Salta
 - :earth_americas: Working daily in English (B2+) with global teams
@@ -50,7 +50,8 @@
 
 ## Career Path
 ```
-2025 - Present  Windows System Administrator @ JBKnowledge (Global)
+2026 - Present  Identity & Access Engineer @ DXC Technology (Global)
+2025 - 2026     Windows System Administrator @ JBKnowledge (Global)
 2023 - 2025     IT Systems Analyst @ Ganfeng Lithium (Mining)
 2022 - 2023     IT Support Specialist @ Livent (Chemical/Mining)
 2021 - 2025     Intern Developer @ Silentium Apps
