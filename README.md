@@ -11,7 +11,7 @@
 
 ---
 
-*IT professional with 5+ years of experience in Windows System Administration, Microsoft 365, Azure, and automation for multinational companies. Based in Salta, Argentina.*
+*IT professional with 5+ years of experience in identity and access (Entra ID, Conditional Access), Microsoft 365, Azure, and automation for multinational companies. Based in Salta, Argentina.*
 
 </div>
 
