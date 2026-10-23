@@ -5,7 +5,7 @@
 **Windows System Administrator | IT Analyst | Cloud & Automation**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/davidtaranto/)
-[![Outlook](https://img.shields.io/badge/Email-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:david_taranto@outlook.es)
+[![Email](https://img.shields.io/badge/Email-0078D4?style=for-the-badge&logo=maildotru&logoColor=white)](mailto:contacto@dtsystem.com.ar)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/davidtaranto96)
 [![Website](https://img.shields.io/badge/dtsystem.com.ar-0F172A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://dtsystem.com.ar)
 
