@@ -7,6 +7,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/davidtaranto/)
 [![Outlook](https://img.shields.io/badge/Email-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:david_taranto@outlook.es)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/davidtaranto96)
+[![Website](https://img.shields.io/badge/dtsystem.com.ar-0F172A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://dtsystem.com.ar)
 
 ---
 
@@ -17,6 +18,7 @@
 ## About Me
 
 - :office: Currently **Windows System Administrator** at **JBKnowledge**
+- :briefcase: Freelance as **DT System**: websites, online stores and custom management systems for businesses, at [dtsystem.com.ar](https://dtsystem.com.ar)
 - :mortar_board: Informatics Engineering student at Catholic University of Salta
 - :earth_americas: Working daily in English (B2+) with global teams
 - :zap: Passionate about automating IT operations and building internal tools
@@ -40,6 +42,7 @@
 
 | Project | Description | Tech |
 |---------|-------------|------|
+| :globe_with_meridians: [**DT System**](https://dtsystem.com.ar) | My freelance studio's site: websites, Shopify stores and custom CRMs for businesses in Argentina and Mexico, with live client work and demos. | `HTML` `CSS` `JavaScript` `GitHub Pages` |
 | :shield: [**M365 Offboarding Module**](https://github.com/davidtaranto96/Offboarding-module) | Automated employee offboarding tool — backup OneDrive & Emails to Azure Blob, remove licenses, groups, block sign-in. Full SPA with MSAL auth. | `Azure` `Graph API` `MSAL.js` `Blob Storage` |
 | 🤖 [**Claude: de 0 a Agentes**](https://davidtaranto96.github.io/Blog-AI) | Guía interactiva completa del ecosistema Claude — fundamentos, diseño web, marketing, agentes y automatización. Con buscador, favoritos y 50+ comandos listos para copiar. | `Claude` `HTML` `GitHub Pages` |
 
